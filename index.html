@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pixel Battle</title>
+    <meta
+      name="description"
+      content="Pixel Battle — безкоштовна онлайн-гра для розмальовування спільного полотна по 1 пікселю кожні 15 хвилин."
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Online Pixel Battle</p>
+          <h1>Pixel Battle</h1>
+        </div>
+        <div class="status-panel">
+          <span id="cooldownLabel">Доступно зараз</span>
+          <strong id="cooldownTimer">00:00</strong>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="board-panel card">
+          <div class="board-header">
+            <h2>Полотно</h2>
+            <button id="resetDemoButton" class="ghost-button" type="button">
+              Скинути демо
+            </button>
+          </div>
+
+          <canvas
+            id="pixelCanvas"
+            width="960"
+            height="576"
+            aria-label="Полотно для пікселя"
+          ></canvas>
+        </section>
+
+        <aside class="controls card">
+          <div class="block">
+            <h3>Вибір кольору</h3>
+            <div id="colorPalette" class="color-palette" aria-label="Палітра кольорів"></div>
+          </div>
+
+          <div class="block">
+            <h3>Інформація</h3>
+            <ul class="info-list">
+              <li>Кожен користувач ставить 1 піксель</li>
+              <li>Кожні 15 хвилин</li>
+              <li>Спільна карта зберігається онлайн</li>
+            </ul>
+          </div>
+
+          <div class="block">
+            <h3>Статус</h3>
+            <p id="statusText">Готово до малювання.</p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
